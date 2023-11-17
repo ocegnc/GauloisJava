@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public abstract class Groupe {
-    protected ArrayList<Humains> lesHabitants;
-    protected Humains chef;
+    private ArrayList<Humains> lesHabitants;
+    private Humains chef;
 
     public Groupe(Humains chef){
         this.chef=chef;
@@ -12,10 +12,6 @@ public abstract class Groupe {
     public abstract void ajouter(Humains h);
 
     public String toString(){
-
-        for(Humains h : lesHabitants){
-            h.toString();
-        }
-        return null;
+        return "Le village est composé de : \n" + lesHabitants + "\n dont le chef est " + chef;
     }
 }

@@ -9,7 +9,7 @@ public class Village extends Groupe {
 
 
     public String toString() {
-        return "Le village est composé de : "+lesHabitants+"dont le chef est "+(Gaulois) chef;
+        return super.toString();
     }
 
     public void ajouter(Humains g){

@@ -26,4 +26,8 @@ public class Romain extends Humains{
         }
         return rep;
     }
+
+    public String toString(){
+        return super.toString() + ", grade=" + getGrade();
+    }
 }
