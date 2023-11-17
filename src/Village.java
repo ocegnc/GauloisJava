@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Village extends Groupe {
 
-    public Village(Humains chef){
-        super((Gaulois) chef);
+    public Village(Humains chefG){
+        super((Gaulois) chefG);
     }
 
 
@@ -23,7 +23,7 @@ public class Village extends Groupe {
         }
     }
 
-    public String bataille1(camp c){
+    public String bataille1(Camp c){
 
     }
 }
