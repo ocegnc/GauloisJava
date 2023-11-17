@@ -1,20 +1,31 @@
 import java.util.ArrayList;
 
-public class Village {
-    private ArrayList<Gaulois> lesGaulois;
-    private String chef;
+public class Village extends Groupe {
+    private ArrayList<Humains> lesGaulois;
 
-    public Village(ArrayList<Gaulois> lesGaulois, String chef){
-        this.lesGaulois=lesGaulois;
-        this.chef=chef;
+    public Village(Humains chef){
+        super((Gaulois) chef);
+        this.lesGaulois=new ArrayList<Humains>();
     }
 
     @Override
     public String toString() {
-        return "Le village est composé de : "+lesGaulois+"dont le chef est "+chef;
+        return "Le village est composé de : "+lesGaulois+"dont le chef est "+(Gaulois) chef;
     }
 
-    public void ajouter(Gaulois g){
-        lesGaulois.add(g);
+    public void ajouter(Humains g){
+        lesGaulois.add((Gaulois) g);
     }
+
+    public void distribution(int potion){
+        for(Humains g : lesGaulois){
+            if(g.getForce()<5){
+                g.force += potion;
+            }
+        }
+    }
+
+    /*public String bataille1(camp c){
+
+    }*/
 }
