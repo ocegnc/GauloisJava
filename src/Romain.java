@@ -10,14 +10,14 @@ public class Romain extends Humains{
         return grade;
     }
 
-    public String rencontre(Romain r){
+    public String rencontre(Humains r){
         String rep = "";
         if(this.getGrade().equals(Grade.legionnaire)){
-            rep = "Je te salue " + r.getGrade() + r.getNom() + ", je suis " + this.getNom();
+            rep = "Je te salue " + ((Romain) r).getGrade() + r.getNom() + ", je suis " + this.getNom();
         }
         if(this.getGrade().equals(Grade.centurion)){
-            if(r.getGrade().equals(Grade.chef)){
-                rep = "Je te salue " + r.getGrade() + r.getNom() + ", je suis " + this.getNom();
+            if(((Romain) r).getGrade().equals(Grade.chef)){
+                rep = "Je te salue " + ((Romain) r).getGrade() + r.getNom() + ", je suis " + this.getNom();
             } else {
                 rep = "C'est à moi à te saluer " + this.getGrade() + this.getNom() + ", je suis " + r.getNom();
             }

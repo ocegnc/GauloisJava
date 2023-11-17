@@ -1,13 +1,13 @@
 public abstract class Humains {
-    private String nom;
-    private int force;
+    protected String nom;
+    protected int force;
 
     public Humains(String nom, int force){
         this.nom=nom;
         this.force=force;
     }
 
-    public abstract rencontre(Humains h);
+    public abstract String rencontre(Humains h);
 
     public String getNom() {
         return nom;

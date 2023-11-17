@@ -15,7 +15,8 @@ public class Gaulois extends Humains{
         return nom;
     }
 
-    public String rencontre(Gaulois g){
+    public String rencontre(Humains g){
+        g=(Gaulois) g;
         return "Bonjour je suis"+g.getNom()+" /n Bonjour "+g.getNom()+"moi c'est "+this.getNom();
     }
 }

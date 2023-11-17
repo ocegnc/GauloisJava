@@ -3,9 +3,8 @@ public class Druide extends Gaulois {
     private int potionMin;
     private int potionMax;
 
-    public Druide(String nom, int force, String metier, int potionMin, int potionMax){
-        super(nom, force);
-        this.metier="druide";
+    public Druide(String nom, int force, int potionMin, int potionMax){
+        super(nom, force, "druide");
         this.potionMin=potionMin;
         this.potionMax=potionMax;
     }

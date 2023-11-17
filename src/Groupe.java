@@ -9,7 +9,7 @@ public abstract class Groupe {
         this.lesHumains=new ArrayList<Humains>();
     }
 
-    public abstract ajouter(Humains h);
+    public abstract void ajouter(Humains h);
 
     public String toString(){
 
