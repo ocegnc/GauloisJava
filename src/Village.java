@@ -24,7 +24,7 @@ public class Village extends Groupe {
         }
     }
 
-    /*public String bataille1(camp c){
+    public String bataille1(camp c){
 
-    }*/
+    }
 }
