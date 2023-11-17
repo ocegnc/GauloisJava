@@ -4,7 +4,6 @@ public class Village extends Groupe {
 
     public Village(Humains chef){
         super((Gaulois) chef);
-        this.lesHabitants=new ArrayList<Humains>();
     }
 
 

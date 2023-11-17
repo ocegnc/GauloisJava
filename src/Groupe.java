@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public abstract class Groupe {
-    private ArrayList<Humains> lesHabitants;
-    private Humains chef;
+    protected ArrayList<Humains> lesHabitants;
+    protected Humains chef;
 
     public Groupe(Humains chef){
         this.chef=chef;
