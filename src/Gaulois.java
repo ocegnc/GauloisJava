@@ -7,20 +7,23 @@ public class Gaulois extends Humains{
         super(nom, 1);
         this.metier=metier;
     }
-    public Gaulois(){
-        super("Obélix",15);
-        this.metier="Tailleur de menhir";
+    public Gaulois(String nom, int force, String metier){
+        super(nom,force);
+        this.metier=metier;
+    }
+
+    public String getMetier() {
+        return metier;
+    }
+
+    public String rencontre(Humains h){
+        return "Bonjour je suis "+h.getNom()+"\n Bonjour "+h.getNom()+" moi c'est "+this.getNom();
     }
 
     public String toString(){
         return "Gaulois : "+super.toString()+" , métier : "+metier;
     }
 
-    public String rencontre(){
-        Random r=new Random();
-        int i = r.nextInt(lesHabitants.size());
-        Humains g = lesHabitants.get(i);
-        return "Bonjour je suis "+nom+"\n Bonjour "+nom+" moi c'est "+g.getNom();
-    }
+
 }
 

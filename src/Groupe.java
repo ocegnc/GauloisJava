@@ -6,7 +6,7 @@ public abstract class Groupe {
 
     public Groupe(Humains chef){
         this.chef=chef;
-        this.lesHabitants=new ArrayList<Humains>();
+        this.lesHabitants=new ArrayList<>();
     }
 
     public abstract void ajouter(Humains h);

@@ -21,4 +21,6 @@ public abstract class Humains {
     public String toString() {
         return getClass().getName() + " : " + nom + ", force=" + force;
     }
+
+    public abstract String getMetier();
 }

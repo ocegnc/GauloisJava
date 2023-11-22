@@ -10,4 +10,9 @@ public class Pirate extends Humains{
     public String toString(){
         return super.toString();
     }
+
+    @Override
+    public String getMetier() {
+        return null;
+    }
 }
