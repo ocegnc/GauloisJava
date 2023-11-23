@@ -36,20 +36,20 @@ public class Village extends Groupe {
     public String rencontre(Gaulois g){
         Random r=new Random();
         int i = r.nextInt(lesHabitants.size());
-        lesHabitants.get(i).rencontre(g);
+        return lesHabitants.get(i).rencontre(g);
     }
 
-    public String bataille1(Camp c) throws Exception {
+/*    public String bataille1(Camp c) throws Exception {
         String mes = "";
         String result = "";
         while (estTerminee(c)==false) {
             for (Humains (Romain) r : c.lesHabitants) {
                 for (Humains (Gaulois) g : lesHabitants) {
-                    if (g.getMetier().equals("chef") && g.getMetier().equals("druide") throw new Exception("Le chef et les druides ne combattent pas");
+                    if (g.getMetier().equals("chef") && g.getMetier().equals("druide")) throw new Exception("Le chef et les druides ne combattent pas");
                     int rForce = r.getForce();
                     int gForce = g.getForce();
                     mes = "Le romain se prend une baffe";
-                    rForce -= (1 / 6) * gForce;
+                    rForce -= (1/6)*gForce;
                     gForce -= rForce;
             }
         }
@@ -74,4 +74,5 @@ public class Village extends Groupe {
         }
 
     }
+    */
 }

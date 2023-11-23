@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Camp extends Groupe{
     Camp(Humains chefR){
@@ -11,5 +12,11 @@ public class Camp extends Groupe{
 
     public String toString(){
         return super.toString();
+    }
+
+    public String rencontre(Romain r){
+        Random n=new Random();
+        int i = n.nextInt(lesHabitants.size());
+        return lesHabitants.get(i).rencontre(r);
     }
 }

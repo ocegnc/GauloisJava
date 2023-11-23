@@ -17,18 +17,18 @@ public class Romain extends Humains{
         }
         if(this.getGrade().equals(Grade.centurion)){
             if(((Romain) h).getGrade().equals(Grade.chef)){
-                rep = "Je te salue " + ((Romain) h).getGrade() + h.getNom() + ", je suis " + this.getNom();
+                rep = "Je te salue " + ((Romain) h).getGrade() + " " + h.getNom() + ", je suis " + this.getNom();
             } else {
-                rep = "C'est à moi à te saluer " + this.getGrade() + this.getNom() + ", je suis " + h.getNom();
+                rep = "\nC'est à moi à te saluer " + this.getGrade() + " " + this.getNom() + ", je suis " + h.getNom();
             }
         } else {
-            rep = "C'est à moi à te saluer " + this.getGrade() + this.getNom() + ", je suis " + h.getNom();
+            rep = "\nC'est à moi à te saluer " + this.getGrade() + " " + this.getNom() + ", je suis " + h.getNom();
         }
         return rep;
     }
 
     public String toString(){
-        return super.toString() + ", grade=" + getGrade();
+        return super.toString() + ", grade=" + getGrade() + "\n";
     }
 
     public String getMetier(){

@@ -17,11 +17,11 @@ public class Gaulois extends Humains{
     }
 
     public String rencontre(Humains h){
-        return "Bonjour je suis "+h.getNom()+"\n Bonjour "+h.getNom()+" moi c'est "+this.getNom();
+        return "Bonjour je suis "+h.getNom()+"!\nBonjour "+h.getNom()+" moi c'est "+this.getNom()+"!";
     }
 
     public String toString(){
-        return "Gaulois : "+super.toString()+" , métier : "+metier;
+        return super.toString()+" , métier : "+metier+"\n";
     }
 
 

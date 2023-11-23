@@ -7,11 +7,12 @@ public abstract class Groupe {
     public Groupe(Humains chef){
         this.chef=chef;
         this.lesHabitants=new ArrayList<>();
+        lesHabitants.add(chef);
     }
 
     public abstract void ajouter(Humains h);
 
     public String toString(){
-        return "Le village est composé de : \n" + lesHabitants + "\n dont le chef est " + chef;
+        return "Le " + getClass().getName() + ", dont le chef est " + chef.getNom() + ", est composé de : \n" + lesHabitants;
     }
 }
