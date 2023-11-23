@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         // Village de Gaulois
 
@@ -33,12 +35,12 @@ public class Main {
 
         // Camp de Romains
 
-        Romain  caiusObtus = new Romain("Caius Obtus", 6, Grade.chef);
-        Romain  brutus = new Romain("Brutus",4, Grade.centurion);
-        Romain  briseradius = new Romain("Briseradius", 2, Grade.legionnaire);
-        Romain  caligulaMinus = new Romain("Caligula Minus", 2, Grade.legionnaire);
-        Romain  chorus = new Romain("Chorus", 4, Grade.centurion);
-        Romain  milexcus = new Romain("Milexcus", 2, Grade.legionnaire);
+        Romain  caiusObtus = new Romain("Caius Obtus", 1, Grade.chef);
+        Romain  brutus = new Romain("Brutus",1, Grade.centurion);
+        Romain  briseradius = new Romain("Briseradius", 1, Grade.legionnaire);
+        Romain  caligulaMinus = new Romain("Caligula Minus", 1, Grade.legionnaire);
+        Romain  chorus = new Romain("Chorus", 1, Grade.centurion);
+        Romain  milexcus = new Romain("Milexcus", 1, Grade.legionnaire);
 
         Camp babaorum = new Camp(caiusObtus);
 
@@ -51,6 +53,12 @@ public class Main {
         System.out.println(babaorum);
         System.out.println(babaorum.rencontre(caiusObtus));
         System.out.println(babaorum.rencontre(milexcus));
+
+        ArrayList<Humains> lesRomains = babaorum.getLesHabitants();
+        ArrayList<Humains> lesGaulois = village.getLesHabitants();
+        Bataille bataille = new Bataille(lesGaulois, lesRomains);
+
+        System.out.println(bataille.strategieUne());
 
     }
 }

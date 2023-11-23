@@ -12,6 +12,10 @@ public abstract class Groupe {
 
     public abstract void ajouter(Humains h);
 
+    public ArrayList<Humains> getLesHabitants() {
+        return lesHabitants;
+    }
+
     public String toString(){
         return "Le " + getClass().getName() + ", dont le chef est " + chef.getNom() + ", est composé de : \n" + lesHabitants;
     }

@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Druide extends Gaulois {
     private int potionMin;
@@ -7,6 +8,11 @@ public class Druide extends Gaulois {
         super(nom, force, "druide");
         this.potionMin=potionMin;
         this.potionMax=potionMax;
+    }
+
+    public int produirePotion() {
+        Random random = new Random();
+        return random.nextInt(potionMax - potionMin + 1) + potionMin;
     }
 
     @Override

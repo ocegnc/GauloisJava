@@ -2,6 +2,10 @@ public abstract class Humains {
     protected String nom;
     protected int force;
 
+    public Humains(String nom){
+        this.nom=nom;
+    }
+
     public Humains(String nom, int force){
         this.nom=nom;
         this.force=force;
@@ -23,4 +27,6 @@ public abstract class Humains {
     }
 
     public abstract String getMetier();
+
+    public abstract Grade getGrade();
 }

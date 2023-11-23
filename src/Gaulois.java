@@ -16,6 +16,11 @@ public class Gaulois extends Humains{
         return metier;
     }
 
+    @Override
+    public Grade getGrade() {
+        return null;
+    }
+
     public String rencontre(Humains h){
         return "Bonjour je suis "+h.getNom()+"!\nBonjour "+h.getNom()+" moi c'est "+this.getNom()+"!";
     }

@@ -19,10 +19,10 @@ public class Romain extends Humains{
             if(((Romain) h).getGrade().equals(Grade.chef)){
                 rep = "Je te salue " + ((Romain) h).getGrade() + " " + h.getNom() + ", je suis " + this.getNom();
             } else {
-                rep = "\nC'est à moi à te saluer " + this.getGrade() + " " + this.getNom() + ", je suis " + h.getNom();
+                rep = "C'est à moi à te saluer " + this.getGrade() + " " + this.getNom() + ", je suis " + h.getNom();
             }
         } else {
-            rep = "\nC'est à moi à te saluer " + this.getGrade() + " " + this.getNom() + ", je suis " + h.getNom();
+            rep = "C'est à moi à te saluer " + this.getGrade() + " " + this.getNom() + ", je suis " + h.getNom();
         }
         return rep;
     }

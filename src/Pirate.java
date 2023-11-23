@@ -15,4 +15,9 @@ public class Pirate extends Humains{
     public String getMetier() {
         return null;
     }
+
+    @Override
+    public Grade getGrade() {
+        return null;
+    }
 }

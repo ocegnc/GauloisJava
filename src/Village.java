@@ -15,24 +15,6 @@ public class Village extends Groupe {
         lesHabitants.add((Gaulois) g);
     }
 
-    public void distribution(int potion){
-        for(Humains g : lesHabitants){
-            if(g.getForce()<5){
-                g.force += potion;
-            }
-        }
-    }
-
-    private boolean estTerminee(Camp c){
-        boolean v = true;
-        for (Humains r : c.lesHabitants){
-            if (r.force!=0){//au moins 1 romain a de la force donc bataille pas termine
-                v = false;
-            }
-        }
-        return v;
-    }
-
     public String rencontre(Gaulois g){
         Random r=new Random();
         int i = r.nextInt(lesHabitants.size());
