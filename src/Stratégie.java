@@ -2,5 +2,5 @@ import java.util.ArrayList;
 
 public interface Stratégie {
 
-    public String seBagarrer(ArrayList<Romain> lesRomains, ArrayList<Gaulois> lesGaulois) throws Exception;
+    public void seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) ;
 }

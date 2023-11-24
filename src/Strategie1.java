@@ -1,9 +1,9 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Strategie1 implements Stratégie{
 
-    public String affronter(Humains r, Humains g) throws Exception {
-        String mes = "";
+    public String affronter(Humains r, Humains g) {
         int rForce = r.getForce();
         int gForce = g.getForce();
         rForce -= gForce/6;
@@ -11,21 +11,30 @@ public class Strategie1 implements Stratégie{
         return "Le romain se prend une baffe";
     }
 
-    public String seBagarrer(ArrayList<Romain> lesRomains, ArrayList<Gaulois> lesGaulois) throws Exception{
-        for (int i = 0; i < lesRomains.size(); i++) {
-            do{
-                //  distribution();
-                Humains romain = lesRomains.get(i);
-                Humains gaulois = lesGaulois.get(i);
-                if (gaulois.getMetier().equals("chef") || gaulois.getMetier().equals("druide") || romain.getGrade()==Grade.chef) {
-                    lesGaulois.remove(gaulois);
-                    lesRomains.remove(romain);
-                }
-                else {
-                    affronter(romain, gaulois);
-                }
-            } while(estTerminee()==false);
+    /*private boolean estTerminee(){
+        boolean v = true;
+        for (Humains r : lesRomains){
+            if (r.force!=0){//au moins 1 romain a de la force donc bataille pas termine
+                v = false;
+            }
         }
-        return "La bataille est terminée !";
+        return v;
+    }*/
+
+    public void seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
+        Iterator<Humains> it = lesGaulois.iterator();
+        Iterator<Humains> it2 = lesRomains.iterator();
+                while(it2.hasNext()){
+                    Humains gaulois=it.next();
+                    Humains romain=it2.next();
+                    if (gaulois.getMetier().equals("chef") || gaulois.getMetier().equals("druide") || romain.getGrade() == Grade.chef) {
+                        it.remove();
+                        it2.remove();
+                    } else {
+                        affronter(romain, gaulois);
+                    }
+                }
+
+
     }
 }

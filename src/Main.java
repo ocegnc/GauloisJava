@@ -56,9 +56,12 @@ public class Main {
 
         ArrayList<Humains> lesRomains = babaorum.getLesHabitants();
         ArrayList<Humains> lesGaulois = village.getLesHabitants();
-        Bataille bataille = new Bataille(lesGaulois, lesRomains);
 
-        System.out.println(bataille.strategieUne());
+        Strategie1 s1 = new Strategie1();
+        village.combattre(lesRomains, s1);
+
+
+
 
     }
 }
