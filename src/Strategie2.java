@@ -24,7 +24,6 @@ public class Strategie2 implements Stratégie{
         }
     }
 
-    public String seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
-        return "rrr";
+    public void seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
     }
 }

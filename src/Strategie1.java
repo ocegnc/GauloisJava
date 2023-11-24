@@ -11,7 +11,7 @@ public class Strategie1 implements Stratégie{
         gForce -= rForce;
         g.setForce(gForce);
         r.setForce(rForce);
-        System.out.println("Le romain"+r.getNom()+" se prend une baffe");
+        System.out.println("Le romain "+r.getNom()+" se prend une baffe");
         return "Le romain"+r.getNom()+" se prend une baffe";
     }
 
@@ -50,7 +50,7 @@ public class Strategie1 implements Stratégie{
         }
         return null;
     }
-    public String seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
+    public void seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
         Iterator<Humains> it;
         Iterator<Humains> it2;
         Random r = new Random();
@@ -69,9 +69,7 @@ public class Strategie1 implements Stratégie{
                 }
                 affronter(romain, lesGaulois.get(g));
                 distribution(lesGaulois);
-
             }
         }while (sommeForce(lesRomains) >= 0) ;
-        return "La bataille est terminée";
     }
 }
