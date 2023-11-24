@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Village extends Groupe {
+public class Village extends Groupe implements Startégie {
 
     public Village(Humains chefG){
         super((Gaulois) chefG);
