@@ -49,13 +49,13 @@ public class Bataille {
         return "La bataille est terminée !";
     }
 
-    public String affronter(Humains r, Humains g) throws Exception {
+    /*public String affronter(Humains r, Humains g) throws Exception {
         String mes = "";
         int rForce = r.getForce();
         int gForce = g.getForce();
         rForce -= gForce/6;
         gForce -= rForce;
         return "Le romain se prend une baffe";
-    }
+    }*/
 
 }

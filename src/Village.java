@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Village extends Groupe implements Startégie {
+public class Village extends Groupe {
 
     public Village(Humains chefG){
         super((Gaulois) chefG);
@@ -57,4 +57,9 @@ public class Village extends Groupe implements Startégie {
 
     }
     */
+
+    public String combattre(ArrayList<Romain> lesRomains, Strategie1 s){
+        String mes="";
+        return mes;
+    }
 }
