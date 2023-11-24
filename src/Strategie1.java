@@ -33,26 +33,45 @@ public class Strategie1 implements Stratégie{
         return somme;
     }
 
-    public String seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
-        Iterator<Humains> it ;
-        Iterator<Humains> it2 ;
+    public void distribution(ArrayList<Humains> lesGaulois){
         Random r = new Random();
-        do{
-             it2 = lesRomains.iterator();
-            while(it2.hasNext()){
+        int p = r.nextInt(getDruide(lesGaulois).potionMin, getDruide(lesGaulois).potionMax);
+        for(Humains g : lesGaulois){
+            if(g.getForce()<5){
+                g.setForce(g.getForce()+p);
+            }
+        }
+    }
 
-                Humains romain=it2.next();
+    public Druide getDruide(ArrayList<Humains> lesGaulois){
+        for(Humains g : lesGaulois){
+            if(g instanceof Druide)
+                return (Druide) g;
+        }
+        return null;
+    }
+    public String seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
+        Iterator<Humains> it;
+        Iterator<Humains> it2;
+        Random r = new Random();
+        do {
+            it2 = lesRomains.iterator();
+            while (it2.hasNext()) {
+
+                Humains romain = it2.next();
                 if (romain.getGrade() == Grade.chef) {
                     it2.next();
                 }
 
                 int g = r.nextInt(lesGaulois.size());
-                if (lesGaulois.get(g).getMetier().equals("chef") || lesGaulois.get(g).getMetier().equals("druide") ) {
+                if (lesGaulois.get(g).getMetier().equals("chef") || lesGaulois.get(g).getMetier().equals("druide")) {
                     g = r.nextInt(lesGaulois.size());
-                    }
-                affronter(romain, lesGaulois.get(g));
                 }
-        }while(sommeForce(lesRomains) >= 0);
+                affronter(romain, lesGaulois.get(g));
+                distribution(lesGaulois);
+
+            }
+        }while (sommeForce(lesRomains) >= 0) ;
         return "La bataille est terminée";
     }
 }

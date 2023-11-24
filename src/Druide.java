@@ -1,8 +1,8 @@
 import java.util.Random;
 
 public class Druide extends Gaulois {
-    private int potionMin;
-    private int potionMax;
+    protected int potionMin;
+    protected int potionMax;
 
     public Druide(String nom, int force, int potionMin, int potionMax){
         super(nom, force, "druide");

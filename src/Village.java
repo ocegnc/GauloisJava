@@ -22,17 +22,17 @@ public class Village extends Groupe {
         return lesHabitants.get(i).rencontre(g);
     }
 
-    public String combattre(ArrayList<Humains> lesRomains, Strategie1 s) {
+
+
+    public String combattre(ArrayList<Humains> lesRomains, StratEnum s) {
         String mes ="";
-        /*Iterator<Humains> it = lesRomains.iterator();
-        while(it.hasNext()){
-            Humains p=it.next();
-            if (p.force != 0) {*/
-                s.seBagarrer(lesRomains, this.lesHabitants);
-            /*}else{
-                mes = "la bataille est terminée";
-            }
-        }*/
+        if(s==StratEnum.strategie1){
+            Strategie1 s1 = new Strategie1();
+            s1.seBagarrer(lesRomains, this.lesHabitants);
+        }else{
+            Strategie2 s2 = new Strategie2();
+            s2.seBagarrer(lesRomains, this.lesHabitants);
+        }
         mes = "la bataille est terminée";
         return mes;
     }

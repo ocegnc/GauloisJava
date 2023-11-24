@@ -15,7 +15,7 @@ public class Main {
         Gaulois tragicomix = new Gaulois("Tragicomix","beau gosse" );
         Gaulois ordralbabetix = new Gaulois("Ordralbabétix","poissonnier" );
         Gaulois falbala = new Gaulois("Falbala","fiancée" );
-        Gaulois panoramix = new Gaulois("Panoramix","druide" );
+        Druide panoramix = new Druide("Panoramix",1, 5,10 );
 
         Village village = new Village(abraracourcix);
 
@@ -57,8 +57,9 @@ public class Main {
         ArrayList<Humains> lesRomains = babaorum.getLesHabitants();
         ArrayList<Humains> lesGaulois = village.getLesHabitants();
 
-        Strategie1 s1 = new Strategie1();
-        System.out.println(village.combattre(lesRomains, s1));
+        System.out.println(village.combattre(lesRomains, StratEnum.strategie1));
+        System.out.println(village.combattre(lesRomains, StratEnum.strategie2));
+
 
 
 
