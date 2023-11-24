@@ -29,4 +29,8 @@ public abstract class Humains {
     public abstract String getMetier();
 
     public abstract Grade getGrade();
+
+    public void setForce(int force) {
+        this.force = force;
+    }
 }

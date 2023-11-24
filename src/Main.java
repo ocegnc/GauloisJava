@@ -58,7 +58,7 @@ public class Main {
         ArrayList<Humains> lesGaulois = village.getLesHabitants();
 
         Strategie1 s1 = new Strategie1();
-        village.combattre(lesRomains, s1);
+        System.out.println(village.combattre(lesRomains, s1));
 
 
 

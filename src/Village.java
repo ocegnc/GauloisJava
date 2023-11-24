@@ -24,15 +24,16 @@ public class Village extends Groupe {
 
     public String combattre(ArrayList<Humains> lesRomains, Strategie1 s) {
         String mes ="";
-        Iterator<Humains> it = lesRomains.iterator();
+        /*Iterator<Humains> it = lesRomains.iterator();
         while(it.hasNext()){
             Humains p=it.next();
-            if (p.force != 0) {
+            if (p.force != 0) {*/
                 s.seBagarrer(lesRomains, this.lesHabitants);
-            }else{
+            /*}else{
                 mes = "la bataille est terminée";
             }
-        }
+        }*/
+        mes = "la bataille est terminée";
         return mes;
     }
 }

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 
 public class Strategie1 implements Stratégie{
 
@@ -8,7 +9,10 @@ public class Strategie1 implements Stratégie{
         int gForce = g.getForce();
         rForce -= gForce/6;
         gForce -= rForce;
-        return "Le romain se prend une baffe";
+        g.setForce(gForce);
+        r.setForce(rForce);
+        System.out.println("Le romain"+r.getNom()+" se prend une baffe");
+        return "Le romain"+r.getNom()+" se prend une baffe";
     }
 
     /*private boolean estTerminee(){
@@ -21,20 +25,34 @@ public class Strategie1 implements Stratégie{
         return v;
     }*/
 
-    public void seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
-        Iterator<Humains> it = lesGaulois.iterator();
-        Iterator<Humains> it2 = lesRomains.iterator();
-                while(it2.hasNext()){
-                    Humains gaulois=it.next();
-                    Humains romain=it2.next();
-                    if (gaulois.getMetier().equals("chef") || gaulois.getMetier().equals("druide") || romain.getGrade() == Grade.chef) {
-                        it.remove();
-                        it2.remove();
-                    } else {
-                        affronter(romain, gaulois);
-                    }
+    public int sommeForce(ArrayList<Humains> lesRomains){
+        int somme = 0;
+        for (Humains r : lesRomains){
+            somme+=r.getForce();
+        }
+        return somme;
+    }
+
+    public String seBagarrer(ArrayList<Humains> lesRomains, ArrayList<Humains> lesGaulois) {
+        Iterator<Humains> it ;
+        Iterator<Humains> it2 ;
+        Random r = new Random();
+        do{
+             it2 = lesRomains.iterator();
+            while(it2.hasNext()){
+
+                Humains romain=it2.next();
+                if (romain.getGrade() == Grade.chef) {
+                    it2.next();
                 }
 
-
+                int g = r.nextInt(lesGaulois.size());
+                if (lesGaulois.get(g).getMetier().equals("chef") || lesGaulois.get(g).getMetier().equals("druide") ) {
+                    g = r.nextInt(lesGaulois.size());
+                    }
+                affronter(romain, lesGaulois.get(g));
+                }
+        }while(sommeForce(lesRomains) >= 0);
+        return "La bataille est terminée";
     }
 }

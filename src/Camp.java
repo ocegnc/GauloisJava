@@ -19,4 +19,6 @@ public class Camp extends Groupe{
         int i = n.nextInt(lesHabitants.size());
         return lesHabitants.get(i).rencontre(r);
     }
+
+
 }
