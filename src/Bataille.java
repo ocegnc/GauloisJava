@@ -41,9 +41,9 @@ public class Bataille {
                     lesGaulois.remove(gaulois);
                     lesRomains.remove(romain);
                 }
-                else {
-                    affronter(romain, gaulois);
-                }
+                //else {
+                 //   affronter(romain, gaulois);
+                //}
              } while(estTerminee()==false);
         }
         return "La bataille est terminée !";
